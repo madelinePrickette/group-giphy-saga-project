@@ -6,16 +6,16 @@ function ResultsItem ({pic}) {
     let dispatch = useDispatch();
 
     const favoriteGif = () => {
-        console.log('clicked favorite', pic.id)
+        console.log('clicked favorite')
         dispatch({
-            type: 'FAVORITE_GIF', payload: pic.url
+            type: 'FAVORITE_GIF', payload: pic.images.original.url
         })
     }
 
     return(
 
         <>
-            <li><img src={pic.url}></img></li>
+            <li><img src={pic.images.original.url}></img></li>
             <button onClick={favoriteGif}>❤️Favorite</button>
         </>
         

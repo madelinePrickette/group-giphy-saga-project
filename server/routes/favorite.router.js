@@ -17,7 +17,22 @@ router.get('/', (req, res) => {
 
 // add a new favorite
 router.post('/', (req, res) => {
-  res.sendStatus(200);
+  console.log("req.body !!!!!", req.body.url);
+  const newFavGif = req.body.url
+
+  const queryText = 
+  `
+  INSERT INTO favorite ("url")
+  VALUES ($1)
+  `
+  const queryValues = [newFavGif];
+
+  pool.query(queryText, queryValues)
+    .then( () => {res.sendStatus(201)})
+    .catch( (err) => {
+      console.error('error in SERVER POST', err)
+      res.sendStatus(500);
+    })
 });
 
 // update given favorite with a category id

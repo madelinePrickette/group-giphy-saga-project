@@ -33,8 +33,9 @@ function* getResults(action){
 
 
 function* favoriteGif(action) {
+    console.log(action.payload);
     try{
-        yield axios.post('/api/favorite', action.payload) //action.payload will be.. the gif url?
+        yield axios.post('/api/favorite', {url: action.payload}) //action.payload will be.. the gif url?
         yield put({type: 'GET_FAVORITES'})
     } catch(err) {
         console.error('ERROR in POST generator', err)
