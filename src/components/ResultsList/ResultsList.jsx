@@ -1,5 +1,9 @@
 import ResultsItem from '../ResultsItem/ResultsItem.jsx';
+import {useSelector} from 'react-redux';
 function ResultsList () {
+
+    const response = useSelector(store => store.response);
+    console.log(response);
 
     return(
         <>
