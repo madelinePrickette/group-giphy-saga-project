@@ -1,8 +1,8 @@
 import React from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import ResultsList from '../ResultsList/ResultsList.jsx';
-//IMPORT COMPONENTS
-import Favorites from '../Favorites/Favorites';
+//IMPORT COMPONENTS]
+import Favorite from '../Favorite/Favorite';
 import Search from '../Search/Search.jsx'
 
 
