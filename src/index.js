@@ -11,8 +11,10 @@ import {takeEvery, put} from 'redux-saga/effects';
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
+
     yield takeEvery('SUBMIT_SEARCH', getResults)
     yield takeEvery('FAVORITE_GIF', favoriteGif)
+    yield takeEvery('GET_FAVORITES', getFavorites);
 } 
 
 // function* submitSearch(action){
@@ -47,6 +49,24 @@ const response = ( state = [], action ) => {
     }
 }
 
+function* getFavorites(action){
+    try{
+        let response = yield axios.get('/api/favorite')
+        yield put({type: 'SET_FAVORITES', payload: response.data})
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+const favorites = ( state = [], action ) => {
+    switch (action.type) {
+        case 'SET_FAVORITES':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 //search reducer
 
 //favorites reducer
@@ -54,6 +74,7 @@ const response = ( state = [], action ) => {
 const store = createStore(
     combineReducers({
         response,
+        favorites,
         //search reducer
         //favorites reducer
         favoriteGif

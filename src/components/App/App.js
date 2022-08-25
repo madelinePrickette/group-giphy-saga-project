@@ -1,9 +1,8 @@
 import React from 'react';
-import {HashRouter as Router, Route} from 'react-router-dom'
-
-//IMPORT COMPONENTS
-import Favorites from '../Favorites/Favorites';
-
+import {HashRouter as Router, Route} from 'react-router-dom';
+import ResultsList from '../ResultsList/ResultsList.jsx';
+//IMPORT COMPONENTS]
+import Favorite from '../Favorite/Favorite';
 import Search from '../Search/Search.jsx'
 
 
@@ -19,8 +18,9 @@ return (
     <div>
       <h1>Giphy Search!</h1>
       <Search />
+      <ResultsList />
     </div>
-
+    
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Giphy Saga Group Project</h1>
@@ -35,7 +35,7 @@ return (
 
       {/* FAVORITE */}
       <Route path="/favorite">
-        <Favorites />
+        <Favorite />
       </Route>
 
     </div>
