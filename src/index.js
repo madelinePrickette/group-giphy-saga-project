@@ -12,6 +12,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
     yield takeEvery('SUBMIT_SEARCH', getResults)
+    yield takeEvery('FAVORITE_GIF', favoriteGif)
 } 
 
 // function* submitSearch(action){
@@ -25,6 +26,15 @@ function* getResults(action){
         yield put({ type: 'SET_RESPONSE', payload: response.data})
     } catch (err) {
         console.log(err);
+    }
+}
+
+function* favoriteGif(action) {
+    try{
+        yield axios.post('/api/favorite', action.payload) //action.payload will be.. the gif url?
+        yield put({type: 'GET_FAVORITES'})
+    } catch(err) {
+        console.error('ERROR in POST generator', err)
     }
 }
 
@@ -43,9 +53,10 @@ const response = ( state = [], action ) => {
 
 const store = createStore(
     combineReducers({
-        response
+        response,
         //search reducer
         //favorites reducer
+        favoriteGif
     }),
     applyMiddleware(sagaMiddleware, logger),
 );
