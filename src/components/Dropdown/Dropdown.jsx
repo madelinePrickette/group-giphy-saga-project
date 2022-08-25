@@ -10,17 +10,17 @@ Whichever category that is selected will send a dispatch to the server.
 
 
 
- function Dropdown() {
+function Dropdown() {
 
 //USESTATE
-const [category, setCategory] = useState("1");
-
+const [category, setCategory] = useState(0);
+const dispatch = useDispatch();
 
 //HANDLE CLICK 
 const handleClick = (event) => {
     event.preventDefault();
 
-    dispatchEvent({
+    dispatch({
         type: 'CHANGE_CATEGORY',
         payload: category
     })

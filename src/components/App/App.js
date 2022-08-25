@@ -4,6 +4,7 @@ import ResultsList from '../ResultsList/ResultsList.jsx';
 //IMPORT COMPONENTS]
 import Favorite from '../Favorite/Favorite';
 import Search from '../Search/Search.jsx'
+import Dropdown from '../Dropdown/Dropdown'
 
 
 function App(props) {
@@ -36,6 +37,7 @@ return (
       {/* FAVORITE */}
       <Route path="/favorite">
         <Favorite />
+        <Dropdown />
       </Route>
 
     </div>
