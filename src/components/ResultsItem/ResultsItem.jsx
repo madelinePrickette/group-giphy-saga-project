@@ -1,8 +1,20 @@
-function ResultsItem () {
+import {useDispatch} from 'react-redux';
+
+function ResultsItem ({pic}) {
+
+    let dispatch = useDispatch();
+
+    const favoriteGif = () => {
+        console.log('clicked favorite', pic.id)
+        dispatch({
+            type: 'FAVORITE_GIF', payload: pic.url
+        })
+    }
 
     return(
         <>
-        <h4>results</h4>
+            <li><img src={pic.url}></img></li>
+            <button onClick={favoriteGif}>❤️Favorite</button>
         </>
         
     )
