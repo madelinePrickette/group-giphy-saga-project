@@ -31,6 +31,7 @@ function* getResults(action){
     }
 }
 
+
 function* favoriteGif(action) {
     try{
         yield axios.post('/api/favorite', action.payload) //action.payload will be.. the gif url?
@@ -40,10 +41,10 @@ function* favoriteGif(action) {
     }
 }
 
-const response = ( state = [], action ) => {
+const searchResult = ( state = [], action ) => {
     switch (action.type) {
         case 'SET_RESPONSE':
-            return action.payload;
+            return action.payload.data;
         default:
             return state;
     }
@@ -73,7 +74,7 @@ const favorites = ( state = [], action ) => {
 
 const store = createStore(
     combineReducers({
-        response,
+        searchResult,
         favorites,
         //search reducer
         //favorites reducer

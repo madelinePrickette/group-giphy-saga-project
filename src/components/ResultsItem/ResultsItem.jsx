@@ -1,3 +1,4 @@
+
 import {useDispatch} from 'react-redux';
 
 function ResultsItem ({pic}) {
@@ -12,11 +13,13 @@ function ResultsItem ({pic}) {
     }
 
     return(
+
         <>
             <li><img src={pic.url}></img></li>
             <button onClick={favoriteGif}>❤️Favorite</button>
         </>
         
+
     )
 
 }//end of Favorite Item
