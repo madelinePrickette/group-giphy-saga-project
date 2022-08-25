@@ -43,6 +43,7 @@ const response = ( state = [], action ) => {
 
 const store = createStore(
     combineReducers({
+        response
         //search reducer
         //favorites reducer
     }),
@@ -51,4 +52,4 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga)
 
-ReactDOM.render(<Provider><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
