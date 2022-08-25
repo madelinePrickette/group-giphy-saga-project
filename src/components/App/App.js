@@ -35,7 +35,7 @@ return (
 
       {/* FAVORITE */}
       <Route path="/favorite">
-        <Favorites />
+        <Favorite />
       </Route>
 
     </div>
