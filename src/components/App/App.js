@@ -4,6 +4,8 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 //IMPORT COMPONENTS
 import Favorites from '../Favorites/Favorites';
 
+import Search from '../Search/Search.jsx'
+
 
 function App(props) {
  
@@ -16,6 +18,7 @@ return (
   <Router>
     <div>
       <h1>Giphy Search!</h1>
+      <Search />
     </div>
 
     <div className='App'>
