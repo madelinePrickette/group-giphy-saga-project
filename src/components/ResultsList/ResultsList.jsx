@@ -2,14 +2,20 @@ import ResultsItem from '../ResultsItem/ResultsItem.jsx';
 import {useSelector} from 'react-redux';
 function ResultsList () {
 
-    const response = useSelector(store => store.response);
-    console.log(response);
+    const searchResult = useSelector(store => store.searchResult);
+    console.log('searchResult', searchResult);
 
     return(
-        <>
-        <h3>Result mapping goes here</h3>
-        <ResultsItem />
-        </>
+        <ul>
+        {searchResult.map((pic) =>{
+            return (
+                <ResultsItem key={pic.id} pic={pic} />
+            )
+
+        })}
+        </ul>
+        
+
     );
 
 }//end of favorite List

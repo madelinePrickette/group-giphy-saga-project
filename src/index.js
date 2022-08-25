@@ -28,10 +28,10 @@ function* getResults(action){
     }
 }
 
-const response = ( state = [], action ) => {
+const searchResult = ( state = [], action ) => {
     switch (action.type) {
         case 'SET_RESPONSE':
-            return action.payload;
+            return action.payload.data;
         default:
             return state;
     }
@@ -43,7 +43,7 @@ const response = ( state = [], action ) => {
 
 const store = createStore(
     combineReducers({
-        response
+        searchResult
         //search reducer
         //favorites reducer
     }),
