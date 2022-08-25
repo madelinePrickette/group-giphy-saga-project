@@ -1,7 +1,12 @@
 function ResultsItem ({pic}) {
 
     return(
-        <li>{pic.url}</li>
+
+        <>
+        <h4>results</h4>
+        </>
+        
+
     )
 
 }//end of Favorite Item
