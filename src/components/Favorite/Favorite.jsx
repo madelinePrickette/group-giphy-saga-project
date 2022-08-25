@@ -27,7 +27,7 @@ function Favorite() {
             {favorites.map(favorite => {
                 return(
                     <div key={favorite.id}>
-                        <img src="favorite.url" />
+                        <img src={favorite.url} />
                         {/* <Dropdown /> */}
                     </div>
                 )

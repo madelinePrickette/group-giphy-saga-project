@@ -2,7 +2,7 @@ import React from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom'
 
 //IMPORT COMPONENTS
-import Favorites from '../Favorites/Favorites';
+import Favorite from '../Favorite/Favorite';
 
 import Search from '../Search/Search.jsx'
 
