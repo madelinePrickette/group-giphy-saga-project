@@ -35,6 +35,7 @@ return (
       {/* SEARCH */}
       <Route path="/" exact>
         <Search />
+        <ResultsList />
       </Route>
 
       {/* FAVORITE */}
