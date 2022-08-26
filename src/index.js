@@ -46,7 +46,7 @@ function* favoriteGif(action) {
 function* getCategory(action) {
     console.log(action.payload);
     try{
-        yield axios.put(`/${action.payload.favId}`, action.payload.favCategory);
+        yield axios.put(`/api/favorite/${action.payload.favId}`, {category: action.payload.favCategory});
         yield put ({type:'GET_FAVORITES' })
     } catch(err) {
         console.error('error in put', error);
