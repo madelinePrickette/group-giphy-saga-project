@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       })
   });
 
-// add a new favorite
+// add a new favorite. sends the url of the gif to the DB.
 router.post('/', (req, res) => {
   console.log("req.body !!!!!", req.body.url);
   const newFavGif = req.body.url
@@ -37,7 +37,8 @@ router.post('/', (req, res) => {
 
 // update given favorite with a category id
 router.put('/:favId', (req, res) => {
-  // req.body should contain a category_id to add to this favorite image
+  // req.body contains a category_id to add to this favorite image
+  //we pas in the id of the gif we are trying to update as req.params
   const queryText = `
   UPDATE "favorite"
   SET "category_id" = $2
