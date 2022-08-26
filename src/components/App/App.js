@@ -6,13 +6,9 @@ import Favorite from '../Favorite/Favorite';
 import Search from '../Search/Search.jsx'
 import Dropdown from '../Dropdown/Dropdown'
 
-
+//APP FUNCTION
 function App(props) {
  
-
-
-
-
   // ROUTERS
 return ( 
   <Router>
@@ -22,6 +18,7 @@ return (
       </header>
       <p>Find and favorite gifs!</p>
 
+    {/* NAVBAR WITH LINKS */}
     <nav>
       <ul>
         <li>
@@ -33,13 +30,13 @@ return (
       </ul>
     </nav>
     
-      {/* SEARCH */}
+      {/* SEARCH ROUTE */}
       <Route path="/" exact>
         <Search />
         <ResultsList />
       </Route>
 
-      {/* FAVORITE */}
+      {/* FAVORITE ROUTE */}
       <Route path="/favorite">
         <Favorite />
       </Route>

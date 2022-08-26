@@ -9,14 +9,18 @@ Whichever category that is selected will send a dispatch to the server.
 */
 
 
-
+//DROPDOWN FUNCTION
 function Dropdown({id}) {
 
 //USESTATE
 const [category, setCategory] = useState(0);
 const dispatch = useDispatch();
 
-//HANDLE CLICK 
+//HANDLECLICK 
+/*
+When the "Submit Category" button is clicked, this function is triggered.
+We send a dispatch. The payload of the dispatch takes the category value from the dropdown and converts it from a string to a number.
+*/
 const handleClick = () => {
     event.preventDefault();
 
@@ -28,6 +32,12 @@ const handleClick = () => {
     console.log('Category changed to:', category);
 } // end handleClick
 
+//HANDLECHANGE
+/*
+Triggered when the user selects a category in the dropdown.
+handleChange retrieves the chosen value from selecting a category in the dropdown menu.  
+Selecting the category is *the event*. And event.target.value *retrieves* that value from the event.
+*/
 function handleChange(event) {
     setCategory(event.target.value);
     console.log(category);
@@ -37,6 +47,7 @@ function handleChange(event) {
 // RETURN
 /*
 The value numbers correspond to the id of the category on the server. 
+<Select> has an onChange which triggers {handleChange}.
 */
 return(
 <>
@@ -62,6 +73,6 @@ return(
     </button>
 </>
 ); // end RETURN
-} // end Dropdown
+} // end DROPDOWN
 
 export default Dropdown;
