@@ -22,7 +22,7 @@ const handleClick = () => {
 
     dispatch({
         type: 'CHANGE_CATEGORY',
-        payload: {favCategory: category, favId: id}
+        payload: {favCategory: Number(category), favId: id}
     })
 
     console.log('Category changed to:', category);

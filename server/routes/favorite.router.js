@@ -43,6 +43,7 @@ router.put('/:favId', (req, res) => {
   SET "category_id" = $2
   WHERE "id" = $1;`;
   const queryValues = [req.params.favId, req.body.category];
+  console.log(queryValues);
 
   pool.query(queryText, queryValues)
     .then((result) => {
