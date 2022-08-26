@@ -69,6 +69,17 @@ const favorites = ( state = [], action ) => {
     }
 }
 
+// DROPDOWN CATEGORY REDUCER
+const dropdownCategory = ( state='', action ) => {
+    if( action.type === 'CHANGE_CATEGORY' ) {
+        console.log(action.payload);
+        return action.payload;
+    }
+    return state;
+}
+
+
+
 //search reducer
 
 //favorites reducer
@@ -79,7 +90,8 @@ const store = createStore(
         favorites,
         //search reducer
         //favorites reducer
-        favoriteGif
+        favoriteGif,
+        dropdownCategory
     }),
     applyMiddleware(sagaMiddleware, logger),
 );
