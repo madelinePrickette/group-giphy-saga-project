@@ -20,6 +20,7 @@ function Search() {
 
     return(
         <>
+            <h1>Giphy Search!</h1>
             <input onChange={handleSearchChange} placeholder="Search" type="text" value={searchIn} />
             <button onClick={submitSearch}>Submit</button>
         </>
