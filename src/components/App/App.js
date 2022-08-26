@@ -24,7 +24,7 @@ return (
     <nav>
       <ul>
         <li>
-          <Link to='/search'>Search</Link>
+          <Link to='/'>Search</Link>
         </li>
         <li>
           <Link to='/favorite'>Favorites</Link>
@@ -33,7 +33,7 @@ return (
     </nav>
     
       {/* SEARCH */}
-      <Route path="/search">
+      <Route path="/" exact>
         <Search />
       </Route>
 
