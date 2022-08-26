@@ -10,7 +10,7 @@ Whichever category that is selected will send a dispatch to the server.
 
 
 
-function Dropdown() {
+function Dropdown({id}) {
 
 //USESTATE
 const [category, setCategory] = useState(0);
@@ -22,7 +22,7 @@ const handleClick = () => {
 
     dispatch({
         type: 'CHANGE_CATEGORY',
-        payload: category
+        payload: {favCategory: category, favId: id}
     })
 
     console.log('Category changed to:', category);
@@ -47,6 +47,7 @@ return(
     onChange={handleChange}
     name="category" 
     id="category">
+        <option>choose category</option>
         <option value="1">Funny</option>
         <option value="2">Cohort</option>
         <option value="3">Cartoon</option>

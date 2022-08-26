@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-// import Dropdown from '../Dropdown/Dropdown.jsx'
+import Dropdown from '../Dropdown/Dropdown.jsx'
 
 function Favorite() {
 
@@ -28,7 +28,7 @@ function Favorite() {
                 return(
                     <div key={favorite.id}>
                         <img src={favorite.url} ></img>
-                        {/* <Dropdown /> */}
+                        <Dropdown id={favorite.id}/>
                     </div>
                 )
             })}
