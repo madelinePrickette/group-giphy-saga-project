@@ -17,7 +17,7 @@ const [category, setCategory] = useState(0);
 const dispatch = useDispatch();
 
 //HANDLE CLICK 
-const handleClick = (event) => {
+const handleClick = () => {
     event.preventDefault();
 
     dispatch({
@@ -28,6 +28,10 @@ const handleClick = (event) => {
     console.log('Category changed to:', category);
 } // end handleClick
 
+function handleChange(event) {
+    setCategory(event.target.value);
+    console.log(category);
+}
 
 
 // RETURN
@@ -39,12 +43,15 @@ return(
     {/* DROPDOWN HTML */}
     <label for="category">Categories:</label>
 
-    <select name="category" id="category">
-        <option onClick={(event) => setCategory(1)} value="1">Funny</option>
-        <option onClick={(event) => setCategory(2)} value="2">Cohort</option>
-        <option onClick={(event) => setCategory(3)} value="3">Cartoon</option>
-        <option onClick={(event) => setCategory(4)} value="4">NSFW</option>
-        <option onClick={(event) => setCategory(5)} value="5">Meme</option>
+    <select 
+    onChange={handleChange}
+    name="category" 
+    id="category">
+        <option value="1">Funny</option>
+        <option value="2">Cohort</option>
+        <option value="3">Cartoon</option>
+        <option value="4">NSFW</option>
+        <option value="5">Meme</option>
     </select> 
 
     {/* SUBMIT BUTTON */}
@@ -54,6 +61,6 @@ return(
     </button>
 </>
 ); // end RETURN
-} // end categoryDropdown
+} // end Dropdown
 
 export default Dropdown;
