@@ -15,6 +15,7 @@ function* rootSaga() {
     yield takeEvery('SUBMIT_SEARCH', getResults)
     yield takeEvery('FAVORITE_GIF', favoriteGif)
     yield takeEvery('GET_FAVORITES', getFavorites);
+    yield takeEvery('CHANGE_CATEGORY', getCategory);
 } 
 
 // function* submitSearch(action){
@@ -41,6 +42,17 @@ function* favoriteGif(action) {
         console.error('ERROR in POST generator', err)
     }
 }
+
+function* getCategory(action) {
+    console.log(action.payload);
+    try{
+        yield axios.put(`/${action.payload.favId}`, action.payload.favCategory);
+        yield put ({type:'GET_FAVORITES' })
+    } catch(err) {
+        console.error('error in put', error);
+    }
+
+}//end of category function
 
 const searchResult = ( state = [], action ) => {
     switch (action.type) {
