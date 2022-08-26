@@ -42,7 +42,6 @@ return (
       {/* FAVORITE */}
       <Route path="/favorite">
         <Favorite />
-        <Dropdown />
       </Route>
 
     </div>
